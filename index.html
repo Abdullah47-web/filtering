@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      #display {
+        display: flex;
+        justify-content: center;
+      }
+      #display input {
+        height: 30px;
+        width: 40%;
+        margin-block: 50px;
+        font-size: 1rem;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin-inline: auto;
+        width: 80%;
+        gap: 1rem;
+      }
+      .card {
+        background-color: blanchedalmond;
+        padding: 1px;
+        border-radius: 5px;
+      }
+      .card h3 {
+        color: black;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .card {
+        color: black;
+        font-weight: 500;
+      }
+      .show {
+        display: block;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display">
+      <input type="text" placeholder="Search here..." />
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <h2>Web Development</h2>
+        <p>
+          Learn the fundamentals of HTML, CSS, and JavaScript. Web development
+          is a key skill for creating modern websites and applications.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Artificial Intelligence</h2>
+        <p>
+          Explore the world of AI, from machine learning algorithms to neural
+          networks. AI is transforming industries such as healthcare, finance,
+          and entertainment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Data Science</h2>
+        <p>
+          Understand the process of collecting, analyzing, and interpreting
+          large sets of data. Data science is essential for making data-driven
+          decisions in business.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Cyber security</h2>
+        <p>
+          Learn how to protect systems, networks, and programs from digital
+          attacks. Cybersecurity is crucial to safeguard sensitive information
+          in the digital age.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Blockchain Technology</h2>
+        <p>
+          Discover the decentralized digital ledger technology behind
+          cryptocurrencies like Bitcoin. Blockchain has the potential to
+          revolutionize industries beyond finance.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Mobile App Development</h2>
+        <p>
+          Master the art of building applications for mobile devices, whether
+          for Android or iOS. Mobile app development is a high-demand skill for
+          the digital economy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Cloud Computing</h2>
+        <p>
+          Understand how cloud computing allows businesses and individuals to
+          store and process data over the internet. It's an essential technology
+          for scalable computing solutions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Game Development</h2>
+        <p>
+          Learn how to create interactive video games using engines like Unity
+          and Unreal Engine. Game development combines creativity with technical
+          skills.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Digital Marketing</h2>
+        <p>
+          Explore strategies for promoting products and services online. Digital
+          marketing encompasses SEO, social media, and content marketing.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>DevOps</h2>
+        <p>
+          Learn about the practices that combine software development and IT
+          operations. DevOps aims to shorten the development lifecycle and
+          deliver high-quality software.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Augmented Reality</h2>
+        <p>
+          Discover how augmented reality (AR) enhances the real world with
+          digital overlays. AR is used in gaming, education, and retail.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Internet of Things (IoT)</h2>
+        <p>
+          Understand how everyday objects are connected to the internet,
+          allowing them to send and receive data. IoT is transforming industries
+          and daily life.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      let input = document.querySelector("input");
+      let card = document.querySelectorAll(".card");
+
+      card.forEach((card) => {
+        input.addEventListener("input", () => {
+          let searchBarValue = input.value.toLowerCase();
+          let cardContent = card.textContent.toLowerCase();
+          if(cardContent.includes(searchBarValue)){
+            card.classList.add("show")
+            card.classList.remove("hide")
+          }else{
+            card.classList.add("hide")
+            card.classList.remove("show")
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
